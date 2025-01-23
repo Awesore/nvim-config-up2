@@ -25,6 +25,8 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
+  "prettier/vim-prettier", -- prettier
+
   {
     "vinnymeller/swagger-preview.nvim",
     run = "npm install -g swagger-ui-watcher",
@@ -46,6 +48,23 @@ require("lazy").setup({
 
   {
   'windwp/nvim-autopairs'
-  }
+  },
+
+
+    --- AUTOTAG ---
+  {
+  'windwp/nvim-ts-autotag',
+  config = function()
+    print("nvim-ts-autotag plugin loaded")
+    require('nvim-ts-autotag').setup({
+      filetypes = {
+        'html', 'javascript', 'typescript',
+        'javascriptreact', 'typescriptreact'
+      }
+    })
+  end
+},
+
+
 
 })
